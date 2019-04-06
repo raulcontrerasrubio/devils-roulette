@@ -18,6 +18,9 @@ const DR = {
     this.h2 = this.h/2;
     this.canvas.width = this.w;
     this.canvas.height = this.h;
+    if(this.roulettes){
+      this.roulettes.forEach(roulette => roulette.radius = this.h2/2);
+    }
   },
   move(){
     this.roulettes[this.currentRoulette].move();
@@ -39,7 +42,7 @@ const DR = {
     window.onresize = this.setFullScreen.bind(this);
     this.backgrounds = [new this.Background('hsl(0, 0%, 10%)')];
     this.currentBackground = 0;
-    this.roulettes = [new this.Roulette(6)];
+    this.roulettes = [new this.Roulette(5)];
     this.currentRoulette = 0;
     this.animationLoop();
   },

@@ -1,0 +1,5 @@
+DR.Interaction = {
+  init(){
+
+  }
+};

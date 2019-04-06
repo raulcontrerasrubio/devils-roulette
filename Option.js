@@ -4,26 +4,26 @@ DR.Option = class Option{
     this.size = size;
     this.parent = parent;
     let colors = ['red', 'blue', 'green', 'pink', 'lime', 'salmon'];
+    let text = ['Hola mundo', 'Ey que pasa', 'JaJA'];
     this.color = colors[Math.floor(Math.random() * colors.length)];
+    this.text = text[Math.floor(Math.random() * text.length)];
   }
   move(speed){
     this.center += speed;
-    if(this.center >= 360){
-      this.center = 0;
+    if(this.center > 360){
+      this.center = this.center % 360;
     }
   }
   draw(){
-    DR.ctx.save();
     DR.ctx.strokeStyle = 'black';
     DR.ctx.lineWidth = 3;
-    DR.ctx.translate(DR.w2, DR.h2);
     this.fillColor();
-    this.showCenter();
-    DR.ctx.restore();
+    this.drawText();
   }
   fillColor(){
     DR.ctx.save();
     DR.ctx.fillStyle = this.color;
+
     DR.ctx.beginPath();
     DR.ctx.rotate(DR.Helpers.radians(this.center));
     DR.ctx.moveTo(0, 0);
@@ -32,6 +32,16 @@ DR.Option = class Option{
     DR.ctx.fill();
     DR.ctx.stroke();
     DR.ctx.closePath();
+    DR.ctx.restore();
+  }
+  drawText(){
+    DR.ctx.save();
+    DR.ctx.rotate(DR.Helpers.radians(this.center+this.size/2));
+    DR.ctx.font = `16px Arial`;
+    DR.ctx.textBaseline = 'middle';
+    DR.ctx.textAlign = 'right';
+    DR.ctx.fillStyle = 'white';
+    DR.ctx.fillText(this.text, this.parent.radius - 30, 0, this.parent.radius - 30);
     DR.ctx.restore();
   }
   showCenter(){

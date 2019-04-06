@@ -1,1 +1,0 @@
-window.onload = Roulette.init.bind(Roulette);

@@ -22,7 +22,7 @@ DR.Option = class Option{
   fillColor(){
     DR.ctx.save();
     DR.ctx.fillStyle = this.color;
-
+    DR.ctx.globalAlpha = .8;
     DR.ctx.beginPath();
     DR.ctx.rotate(DR.Helpers.radians(this.center));
     DR.ctx.moveTo(0, 0);

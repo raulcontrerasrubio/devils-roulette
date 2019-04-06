@@ -16,7 +16,7 @@ DR.Roulette = class Roulette{
   draw(){
     DR.ctx.save();
     DR.ctx.translate(this.radius + 100, DR.h2);
-    this.printRouletteBackground();
+    //this.printRouletteBackground();
     this.options.forEach(option => option.draw());
     this.printSelector();
     DR.ctx.restore();
@@ -74,7 +74,6 @@ DR.Roulette = class Roulette{
     this.isActive = true;
   }
   communicateResults(){
-    console.log(`The roulette has spoken: ${this.selectedOption.devilThing.title}`);
-    console.log(`Description: ${this.selectedOption.devilThing.description}`);
+    DR.Interaction.showResultModal(this.selectedOption.devilThing.title, this.selectedOption.devilThing.description);
   }
 };

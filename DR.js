@@ -39,7 +39,7 @@ const DR = {
     window.onresize = this.setFullScreen.bind(this);
     this.backgrounds = [new this.Background('hsl(0, 0%, 10%)')];
     this.currentBackground = 0;
-    this.roulettes = [new this.Roulette()];
+    this.roulettes = [new this.Roulette(6)];
     this.currentRoulette = 0;
     this.animationLoop();
   },

@@ -2,7 +2,7 @@ DR.Roulette = class Roulette{
   constructor(devilThings){
     this.numOfOptions = devilThings.length;
     this.devilThings = devilThings.map(id => DR.Data.getThingById(id));
-    this.radius = DR.h2/2;
+    this.radius = DR.h2 - 150;
     this.options = [];
     this.createOptions();
     this.speed = 0;
@@ -15,7 +15,7 @@ DR.Roulette = class Roulette{
   }
   draw(){
     DR.ctx.save();
-    DR.ctx.translate(DR.w2, DR.h2);
+    DR.ctx.translate(this.radius + 100, DR.h2);
     this.printRouletteBackground();
     this.options.forEach(option => option.draw());
     this.printSelector();
@@ -34,6 +34,7 @@ DR.Roulette = class Roulette{
   printSelector(){
     DR.ctx.beginPath();
     DR.ctx.lineWidth = 2.5;
+    DR.ctx.fillStyle = 'hsl(0, 0%, 50%)';
     DR.ctx.strokeStyle = 'black';
     DR.ctx.moveTo(0, -this.radius + 30);
     DR.ctx.lineTo(-15, -this.radius - 30);

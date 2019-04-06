@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>The devil's roulette</title>
-  <style>
-    html, body{
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="canvas">Your browser is not supported!</canvas>
+  <div class="container">
+    <canvas id="canvas">Your browser is not supported!</canvas>
+    <div class="gui" id="controller">
+      <button class="btn" id="start-turning">⤴</button>
+    </div>
+  </div>
   <script src="DR.js"></script>
   <script src="Helpers.js"></script>
   <script src="Data.js"></script>

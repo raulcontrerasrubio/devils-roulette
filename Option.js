@@ -3,7 +3,7 @@ DR.Option = class Option{
     this.center = center;
     this.size = size;
     this.parent = parent;
-    let colors = ['red', 'blue', 'green', 'pink', 'lime', 'salmon'];
+    let colors = ['darkred', 'deeppink', 'mediumvioletred', 'orangered', 'tomato', 'darkorange', 'violet', 'orchid', 'indigo', 'darkslateblue', 'navy', 'dodgerblue', 'darkturquoise', 'darkcyan', 'tan', 'sienna', 'maroon'];
     this.color = colors[Math.floor(Math.random() * colors.length)];
     this.devilThing = devilThing;
   }
@@ -36,7 +36,7 @@ DR.Option = class Option{
   drawText(){
     DR.ctx.save();
     DR.ctx.rotate(DR.Helpers.radians(this.center+this.size/2));
-    DR.ctx.font = `16px Arial`;
+    DR.ctx.font = `24px Arial`;
     DR.ctx.textBaseline = 'middle';
     DR.ctx.textAlign = 'right';
     DR.ctx.fillStyle = 'white';

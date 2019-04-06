@@ -1,10 +1,12 @@
 DR.Roulette = class Roulette{
-  constructor(numOfOptions){
-    this.numOfOptions = numOfOptions;
+  constructor(devilThings){
+    this.numOfOptions = devilThings.length;
+    this.devilThings = devilThings.map(id => DR.Data.getThingById(id));
     this.radius = DR.h2/2;
     this.options = [];
     this.createOptions();
     this.speed = 0;
+    this.isActive = false;
   }
   move(){
     this.options.forEach(option => option.move(this.speed));
@@ -44,7 +46,7 @@ DR.Roulette = class Roulette{
   createOptions(){
     let degrees = 360/this.numOfOptions;
     for(let i = 0; i < this.numOfOptions; i++){
-      this.options.push(new DR.Option(this, i*degrees, degrees));
+      this.options.push(new DR.Option(this, i*degrees, degrees, this.devilThings[i]));
     }
   }
   checkOption(){
@@ -54,17 +56,24 @@ DR.Roulette = class Roulette{
       let rightLimit = opt.center + opt.size/2 >= 360 ? opt.center + opt.size/2 - 360 : opt.center + opt.size/2;
       return 240 >= leftLimit && 240 <= rightLimit;
     })[0];
-    if(this.selectedOption !== previusOption){
+    if(this.isActive && this.selectedOption !== previusOption){
       // Make sound
     }
   }
   changeSpeed(){
     this.speed *= .9975**2;
-    if(this.speed <= .025){
+    if(this.isActive && this.speed <= .025){
       this.speed = 0;
+      this.isActive = false;
+      this.communicateResults();
     }
   }
   turnRoulette(){
     this.speed = Math.random() * (12.5 - 6.5) + 6.5;
+    this.isActive = true;
+  }
+  communicateResults(){
+    console.log(`The roulette has spoken: ${this.selectedOption.devilThing.title}`);
+    console.log(`Description: ${this.selectedOption.devilThing.description}`);
   }
 };

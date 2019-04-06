@@ -1,12 +1,11 @@
 DR.Option = class Option{
-  constructor(parent, center, size){
+  constructor(parent, center, size, devilThing){
     this.center = center;
     this.size = size;
     this.parent = parent;
     let colors = ['red', 'blue', 'green', 'pink', 'lime', 'salmon'];
-    let text = ['Hola mundo', 'Ey que pasa', 'JaJA'];
     this.color = colors[Math.floor(Math.random() * colors.length)];
-    this.text = text[Math.floor(Math.random() * text.length)];
+    this.devilThing = devilThing;
   }
   move(speed){
     this.center += speed;
@@ -41,7 +40,7 @@ DR.Option = class Option{
     DR.ctx.textBaseline = 'middle';
     DR.ctx.textAlign = 'right';
     DR.ctx.fillStyle = 'white';
-    DR.ctx.fillText(this.text, this.parent.radius - 30, 0, this.parent.radius - 30);
+    DR.ctx.fillText(this.devilThing.title, this.parent.radius - 30, 0, this.parent.radius - 30);
     DR.ctx.restore();
   }
   showCenter(){

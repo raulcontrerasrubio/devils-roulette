@@ -40,9 +40,10 @@ const DR = {
     this.ctx = this.canvas.getContext('2d');
     this.setFullScreen();
     window.onresize = this.setFullScreen.bind(this);
+    this.Interaction.init();
     this.backgrounds = [new this.Background('hsl(0, 0%, 10%)')];
     this.currentBackground = 0;
-    this.roulettes = [new this.Roulette(5)];
+    this.roulettes = [new this.Roulette([1, 2, 3, 4, 5])];
     this.currentRoulette = 0;
     this.animationLoop();
   },

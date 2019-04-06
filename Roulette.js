@@ -55,7 +55,7 @@ DR.Roulette = class Roulette{
     this.selectedOption = this.options.filter(opt => {
       let leftLimit = opt.center - opt.size/2 < 0 ? 360 - Math.abs(opt.center - opt.size/2) : opt.center - opt.size/2;
       let rightLimit = opt.center + opt.size/2 >= 360 ? opt.center + opt.size/2 - 360 : opt.center + opt.size/2;
-      return 240 >= leftLimit && 240 <= rightLimit;
+      return leftLimit < 230 && 230 <= rightLimit;
     })[0];
     if(this.isActive && this.selectedOption !== previusOption){
       // Make sound
@@ -70,8 +70,13 @@ DR.Roulette = class Roulette{
     }
   }
   turnRoulette(){
-    this.speed = Math.random() * (12.5 - 6.5) + 6.5;
+    this.speed += Math.random() * (12.5 - 6.5) + 6.5;
     this.isActive = true;
+  }
+  stopRoulette(){
+    this.speed = 0;
+    this.isActive = false;
+    this.communicateResults();
   }
   communicateResults(){
     DR.Interaction.showResultModal(this.selectedOption.devilThing.title, this.selectedOption.devilThing.description);

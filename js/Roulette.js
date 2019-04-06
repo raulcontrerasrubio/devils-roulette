@@ -16,20 +16,9 @@ DR.Roulette = class Roulette{
   draw(){
     DR.ctx.save();
     DR.ctx.translate(this.radius + 100, DR.h2);
-    //this.printRouletteBackground();
     this.options.forEach(option => option.draw());
     this.printSelector();
     DR.ctx.restore();
-  }
-  printRouletteBackground(){
-    DR.ctx.beginPath();
-    DR.ctx.fillStyle = 'white';
-    DR.ctx.strokeStyle = 'red';
-    DR.ctx.lineWidth = 2.5;
-    DR.ctx.arc(0, 0, this.radius, 0, Math.PI*2);
-    DR.ctx.fill();
-    DR.ctx.stroke();
-    DR.ctx.closePath();
   }
   printSelector(){
     DR.ctx.beginPath();

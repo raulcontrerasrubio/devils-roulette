@@ -19,7 +19,7 @@ html, body{
   width: 100vw;
   height: 100vh;
   background-color: hsl(0, 0%, 5%);
-  background-image: url(images/background.png);
+  background-image: url(../images/background.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

@@ -7,8 +7,6 @@ const DR = {
   h2: null,
   frameCounter: null,
   frameID: null,
-  backgrounds: null,
-  currentBackground: null,
   roulettes: null,
   currentRoulette: null,
   setFullScreen(){
@@ -27,7 +25,6 @@ const DR = {
   },
   draw(){
     this.ctx.clearRect(0, 0, this.w, this.h);
-    //this.backgrounds[this.currentBackground].draw();
     this.roulettes[this.currentRoulette].draw();
   },
   animationLoop(){
@@ -41,8 +38,6 @@ const DR = {
     this.ctx = this.canvas.getContext('2d');
     this.setFullScreen();
     window.onresize = this.setFullScreen.bind(this);
-    this.backgrounds = [new this.Background('hsl(0, 0%, 10%)')];
-    this.currentBackground = 0;
     this.roulettes = [new this.Roulette([1, 2, 3, 4, 5])];
     this.currentRoulette = 0;
     this.Interaction.init();

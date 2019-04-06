@@ -7,7 +7,7 @@ DR.Roulette = class Roulette{
     this.speed = 0;
   }
   move(){
-    this.options.forEach(option => option.center += this.speed);
+    this.options.forEach(option => option.move(this.speed));
   }
   draw(){
     this.printRouletteBackground();
@@ -28,5 +28,12 @@ DR.Roulette = class Roulette{
     for(let i = 0; i < this.numOfOptions; i++){
       this.options.push(new DR.Option(this, i*degrees, degrees));
     }
+  }
+  selectedPart(){
+    return this.options.filter(opt => {
+      let leftLimit = opt.center - opt.size/2 < 0 ? 360 - Math.abs(opt.center - opt.size/2) : opt.center - opt.size/2;
+      let rightLimit = opt.center + opt.size/2 >= 360 ? opt.center + opt.size/2 - 360 : opt.center + opt.size/2;
+      return 240 >= leftLimit && 240 <= rightLimit;
+    })[0];
   }
 };

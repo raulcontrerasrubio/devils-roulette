@@ -17,13 +17,13 @@ DR.Data = {
     },
     {
       id: 4,
-      title: 'Cosa chunga 3',
-      description: 'Se me ha acabado la imaginación',
+      title: 'Moonwalker',
+      description: 'Ve a una clase y, sin decir nada, haz el moonwalker ida y vuelta',
     },
     {
       id: 5,
-      title: 'Cosa chunga 5',
-      description: 'Idear más cosas chungas para añadir cosas a la ruleta',
+      title: 'Mirón',
+      description: 'Ve a una clase y haz como si estuvieras espiándoles',
     },
 
   ],

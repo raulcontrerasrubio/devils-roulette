@@ -1,7 +1,7 @@
 DR.Roulette = class Roulette{
   constructor(devilThings){
     this.numOfOptions = devilThings.length;
-    this.devilThings = devilThings.map(id => DR.Data.getThingById(id));
+    this.devilThings = this.shuffle(devilThings).map(id => DR.Data.getThingById(id));
     this.radius = DR.h2 - 150;
     this.options = [];
     this.createOptions();
@@ -49,6 +49,15 @@ DR.Roulette = class Roulette{
     if(this.isActive && this.selectedOption !== previusOption){
       // Make sound
     }
+  }
+  shuffle(arr){
+    let array = [...arr];
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array;
   }
   changeSpeed(){
     this.speed *= .9975**2;

@@ -38,7 +38,7 @@ const DR = {
     this.ctx = this.canvas.getContext('2d');
     this.setFullScreen();
     window.onresize = this.setFullScreen.bind(this);
-    this.roulettes = [new this.Roulette([1, 5, 2, 4, 2, 3, 3, 1, 3, 4, 5])];
+    this.roulettes = [new this.Roulette([1, 5, 2, 4, 2, 3, 4, 4, 3, 1, 3, 4, 5])];
     this.currentRoulette = 0;
     this.Interaction.init();
     this.animationLoop();

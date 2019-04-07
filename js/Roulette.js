@@ -2,7 +2,7 @@ DR.Roulette = class Roulette{
   constructor(devilThings){
     this.numOfOptions = devilThings.length;
     this.devilThings = this.shuffle(devilThings).map(id => DR.Data.getThingById(id));
-    this.radius = DR.h2 - 150;
+    this.radius = DR.h/3;
     this.options = [];
     this.createOptions();
     this.speed = 0;
@@ -42,9 +42,9 @@ DR.Roulette = class Roulette{
   checkOption(){
     let previusOption = this.selectedOption;
     this.selectedOption = this.options.filter(opt => {
-      let leftLimit = opt.center - opt.size/2 < 0 ? 360 - Math.abs(opt.center - opt.size/2) : opt.center - opt.size/2;
-      let rightLimit = opt.center + opt.size/2 >= 360 ? opt.center + opt.size/2 - 360 : opt.center + opt.size/2;
-      return leftLimit < 230 && 230 <= rightLimit;
+      let leftLimit = opt.center < 0 ? 360 - Math.abs(opt.center) : opt.center;
+      let rightLimit = opt.center + opt.size >= 360 ? opt.center + opt.size - 360 : opt.center + opt.size;
+      return leftLimit < 270 && 270 <= rightLimit;
     })[0];
     if(this.isActive && this.selectedOption !== previusOption){
       // Make sound

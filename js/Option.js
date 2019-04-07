@@ -36,7 +36,7 @@ DR.Option = class Option{
   drawText(){
     DR.ctx.save();
     DR.ctx.rotate(DR.Helpers.radians(this.center+this.size/2));
-    DR.ctx.font = `24px Arial`;
+    DR.ctx.font = `20px Arial`;
     DR.ctx.textBaseline = 'middle';
     DR.ctx.textAlign = 'right';
     DR.ctx.fillStyle = 'white';

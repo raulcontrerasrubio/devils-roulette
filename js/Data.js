@@ -30,6 +30,16 @@ DR.Data = {
       title: 'El joker',
       description: 'Píntate la sonrisa del joker y llévala durante todo el día',
     },
+    {
+      id: 7,
+      title: 'Matrimonio',
+      description: 'Pide matrimonio a una persona desconocida de otra clase',
+    },
+    {
+      id: 8,
+      title: 'Baño',
+      description: 'Di "Te espero en 5 minutos en el baño" a la persona que digan los TA\'s',
+    },
 
   ],
   getThingById(id){

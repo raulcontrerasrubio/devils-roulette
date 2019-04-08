@@ -40,6 +40,11 @@ DR.Data = {
       title: 'Baño',
       description: 'Di "Te espero en 5 minutos en el baño" a la persona que digan los TA\'s',
     },
+    {
+      id: 9,
+      title: 'Tic nervioso',
+      description: 'Cada vez que alguien diga tu nombre tienes que levantar el hombro como si tuvieses un tic nervioso durante todo el día',
+    },
 
   ],
   getThingById(id){

@@ -46,8 +46,8 @@ DR.Roulette = class Roulette{
       let rightLimit = opt.center + opt.size >= 360 ? opt.center + opt.size - 360 : opt.center + opt.size;
       return leftLimit < 270 && 270 <= rightLimit;
     })[0];
-    if(this.isActive && this.selectedOption !== previusOption){
-      // Make sound
+    if(this.isActive && this.selectedOption !== previusOption && this.speed <= 20){
+      DR.SoundManager.playSound('tick');
     }
   }
   shuffle(arr){

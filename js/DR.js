@@ -38,6 +38,7 @@ const DR = {
     this.ctx = this.canvas.getContext('2d');
     this.setFullScreen();
     window.onresize = this.setFullScreen.bind(this);
+    this.SoundManager.loadSounds();
     this.roulettes = [new this.Roulette([1, 2, 3, 4, 5, 6, 7, 8, 9])];
     this.currentRoulette = 0;
     this.Interaction.init();

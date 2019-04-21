@@ -45,6 +45,11 @@ DR.Data = {
       title: 'Tic nervioso',
       description: 'Cada vez que alguien diga tu nombre tienes que levantar el hombro como si tuvieses un tic nervioso durante todo el día',
     },
+    {
+      id: 10,
+      title: 'Una vaca lechera',
+      description: 'Ve a otra clase y, de punta a punta, canta la canción de "Tengo una vaca lechera" mientras golpeas una botella metálica con un boli. ¿No te la sabes? Dice así: "Tengo una vaca lecheeeeera, no es una vaca cualquieeeera, me da leche merengada, ¡ay! qué vaca tan salada, tolón tolóooon, tolón tolóooooon"',
+    },
 
   ],
   getThingById(id){

@@ -39,7 +39,7 @@ const DR = {
     this.setFullScreen();
     window.onresize = this.setFullScreen.bind(this);
     this.SoundManager.loadSounds();
-    this.roulettes = [new this.Roulette([1, 2, 3, 4, 5, 6, 7, 8, 9])];
+    this.roulettes = [new this.Roulette([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])];
     this.currentRoulette = 0;
     this.Interaction.init();
     this.animationLoop();

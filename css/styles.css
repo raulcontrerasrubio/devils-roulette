@@ -69,7 +69,7 @@ html, body{
 }
 
 .card{
-  width: 33%;
+  width: 75%;
   min-height: 50%;
   border-radius: 1rem;
   display: flex;

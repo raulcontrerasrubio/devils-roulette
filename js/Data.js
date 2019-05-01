@@ -47,8 +47,13 @@ DR.Data = {
     },
     {
       id: 10,
-      title: 'Una vaca lechera',
+      title: 'Vaca lechera',
       description: 'Ve a otra clase y, de punta a punta, canta la canción de "Tengo una vaca lechera" mientras golpeas una botella metálica con un boli. ¿No te la sabes? Dice así: "Tengo una vaca lecheeeeera, no es una vaca cualquieeeera, me da leche merengada, ¡ay! qué vaca tan salada, tolón tolóooon, tolón tolóooooon"',
+    },
+    {
+      id: 11,
+      title: 'Mercadona',
+      description: 'Cantar la canción del Mercadona delante de personas desconocidas',
     },
 
   ],

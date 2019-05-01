@@ -68,7 +68,7 @@ DR.Roulette = class Roulette{
     }
   }
   turnRoulette(){
-    this.speed += Math.random() * (15.5 - 8.5) + 8.5;
+    this.speed += Math.random() * (16 - 7) + 8.5;
     this.isActive = true;
   }
   stopRoulette(){
